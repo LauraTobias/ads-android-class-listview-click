@@ -9,16 +9,38 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button buttonSimpleListView;
+    Button btnSimpleListView;
+    Button btnAdapterListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        buttonSimpleListView=findViewById(R.id.btnSimpleListView);
-        buttonSimpleListView.setOnClickListener(v -> {
-            Intent i = new Intent(getApplicationContext(), SimpleListView.class);
-            startActivity(i);
-        });
+
+        this.btnSimpleListView = findViewById(R.id.btnSimpleListView);
+        this.btnAdapterListView = findViewById(R.id.btnAdapterListView);
+
+        View.OnClickListener onClickListener = view -> {
+            switch (view.getId())
+            {
+                case R.id.btnSimpleListView: OpenSimpleListView(); break;
+                case R.id.btnAdapterListView: OpenAdapterListView(); break;
+            }
+        };
+
+        this.btnSimpleListView.setOnClickListener(onClickListener);
+        this.btnAdapterListView.setOnClickListener(onClickListener);
+    }
+
+    public void OpenSimpleListView()
+    {
+        Intent i = new Intent(getApplicationContext(), SimpleListView.class);
+        startActivity(i);
+    }
+
+    public void OpenAdapterListView()
+    {
+        Intent i = new Intent(getApplicationContext(), AdapterListView.class);
+        startActivity(i);
     }
 }

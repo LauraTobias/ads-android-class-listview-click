@@ -7,14 +7,14 @@ import java.util.ArrayList;
 
 public class FruitController {
 
-    Fruits fruitsPersitence ;
+    Fruits fruitsPersistence ;
 
     public FruitController() {
-        fruitsPersitence = new Fruits();
+        fruitsPersistence = new Fruits();
     }
 
     public Fruit[] getFruits() {
-        return fruitsPersitence.FRUITS;
+        return fruitsPersistence.FRUITS;
     }
 
     public ArrayList<String> getFruitsNames(){

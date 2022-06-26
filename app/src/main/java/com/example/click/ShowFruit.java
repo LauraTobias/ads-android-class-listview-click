@@ -11,7 +11,6 @@ import com.example.click.model.Fruit;
 
 public class ShowFruit extends AppCompatActivity {
 
-    Fruit fruit;
     TextView txtFruitName;
     ImageView imgFruit;
 
